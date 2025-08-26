@@ -35,6 +35,7 @@ This repository contains the source code for an educational platform focused on 
 -->
 # Securities-Market-Hackathon
 
+```plaintext
 InvestorEduApp/
 │── README.md
 │── .gitignore
@@ -106,23 +107,24 @@ InvestorEduApp/
             ├── seed.js
             └── loadMockPrices.js
 
+Clone the Repository
+git clone https://github.com/your-username/Securities-Market-Hackathon.git
+cd Securities-Market-Hackathon
 
-1. Clone the Repository
-```git clone https://github.com/your-username/Securities-Market-Hackathon.git
-cd Securities-Market-Hackathon```
 
-2. Server Setup
-```cd server```
-```cp .env.example .env   # configure DATABASE_URL, JWT_SECRET, etc.```
-```npm install```
-``npx prisma migrate dev```
-```npm run dev```
+2. . Server Setup
+cd server
+cp .env.example .env   # configure DATABASE_URL, JWT_SECRET, etc.
+npm install
+npx prisma migrate dev
+npm run dev
+
 
 3. Client Setup
-```cd client
+cd client
 cp .env.example .env   # set EXPO_PUBLIC_API_URL
 npm install
-npx expo start```
+npx expo start
 
 4. Optional: Run with Docker (Postgres + pgAdmin)
 docker-compose up -d
