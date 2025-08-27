@@ -1,6 +1,13 @@
 import { Text, View } from "react-native";
-import AppNavigator from "@/src/navigation/AppNavigator";
+import Tabs from "@/src/components/tabs";
+import Search from "@/src/components/searchbar";
+import tabs from "@/src/components/tabs";
 
 export default function Index() {
-  return <AppNavigator />;
+  return (
+    <View>
+      <Search />
+      <Tabs />
+    </View>
+  );
 }
