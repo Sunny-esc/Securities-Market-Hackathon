@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: backend-service
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      DB_PORT: 5432
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: sunny
+      DB_NAME: App
+      JWT_SECRET: your-very-secure-secret-key
+    depends_on:
+      - db
+    command: ["sh", "./wait-for.sh", "db", "npm", "run", "dev"]
+
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sunny
+      POSTGRES_DB: App
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
