@@ -14,7 +14,6 @@ export default (sequelize, DataTypes) => {
     {
       indexes: [
         { fields: ["content_type", "content_id"] },
-        { unique: false, fields: ["content_type", "content_id"] },
       ],
     }
   );
