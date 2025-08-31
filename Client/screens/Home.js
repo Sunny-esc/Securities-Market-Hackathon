@@ -1,17 +1,20 @@
+import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Header from "./components/header";
-import ItemCard from "./components/itemCard";
-import Tabs from "./components/tabs";
-import Tprogress from "./components/tprogress";
-
+import BasicsCard from "./components/basicsCard";
+import ItemsCard from "./components/itemCard";
+import TProgress from "./components/tprogress";
 
 export default function Home() {
   return (
-      <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: "#ffffff" }}>
-        <Header />
-        <ItemCard />
-        <Tprogress />
-        <Tabs />
-      </SafeAreaProvider>
+    <SafeAreaProvider
+      style={{
+        paddingTop: 0,
+        backgroundColor: "#ffdd",
+      }}
+    >
+      <BasicsCard />
+      <ItemsCard />
+      <TProgress />
+    </SafeAreaProvider>
   );
 }

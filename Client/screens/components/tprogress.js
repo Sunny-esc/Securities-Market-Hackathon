@@ -42,7 +42,7 @@ const items = [
 
 const TProgress = () => (
   <ScrollView
-    contentContainerStyle={{ paddingVertical: 10 }}
+    contentContainerStyle={{ paddingVertical: 5, paddingBottom: 40 }}
     style={{ maxHeight: 300 }} // Optional: limit height for scroll
   >
     {items.map((item, idx) => (
