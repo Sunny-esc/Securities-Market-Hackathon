@@ -1,8 +1,20 @@
-import { Text, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Filters from "./components/filters";
+import ListContinue from "./components/listContinue";
+import VidCard from "./components/vidCards";
 export default function Tutorial() {
   return (
-    <View className="flex-1 items-center justify-center bg-gray-50">
-      <Text className="text-2xl font-bold text-blue-600">Tutorial Screen</Text>
-    </View>
+    <SafeAreaProvider
+      style={{
+        flex: 1,
+        paddingTop: 0,
+        backgroundColor: "#ffdd",
+        paddingBottom: 50,
+      }}
+    >
+      <ListContinue />
+      <VidCard />
+      <Filters />
+    </SafeAreaProvider>
   );
 }
